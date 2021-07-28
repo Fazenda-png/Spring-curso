@@ -7,5 +7,4 @@ import com.example.cursospring.entities.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	
-	
 }

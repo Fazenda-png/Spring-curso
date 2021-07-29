@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class OrderItem implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@EmbeddedId
 	private OrderItemPK id = new OrderItemPK();
 	private Integer quantity;
@@ -47,20 +47,21 @@ public class OrderItem implements Serializable {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
 	@JsonIgnore
-	private Order getOrder() {
+	public Order getOrder() {
 		return id.getOrder();
 	}
 
-	private void setOrder(Order order) {
+	public void setOrder(Order order) {
 		id.setOrder(order);
 	}
 
-	private Product getProduct() {
+	public Product getProduct() {
 		return id.getProduct();
 	}
 
-	private void setProduct(Product product) {
+	public void setProduct(Product product) {
 		id.setProduct(product);
 	}
 

@@ -17,7 +17,6 @@ import javax.persistence.Table;
 
 import com.example.cursospring.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_order")
@@ -57,7 +56,7 @@ public class Order implements Serializable {
 	}
 
 	public void setOrderStatus(OrderStatus orderStatus) {
-		if (orderStatus == null) {
+		if (orderStatus != null) {
 			this.orderStatus = orderStatus.getCode();
 		}
 	}

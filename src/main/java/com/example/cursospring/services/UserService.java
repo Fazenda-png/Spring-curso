@@ -23,8 +23,12 @@ public class UserService {
 		Optional<User> obj = userRepository.findById(Id);
 		return obj.get();
 	}
-	
+
 	public User insert(User obj) {
 		return userRepository.save(obj);
+	}
+
+	public void delete(Long Id) {
+		userRepository.deleteById(Id);
 	}
 }
